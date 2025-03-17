@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Multi Tab Opener</title>
+    <style>
+        body { text-align: center; font-family: Arial, sans-serif; margin-top: 50px; }
+        input, button { margin: 10px; padding: 10px; font-size: 16px; width: 300px; }
+    </style>
+</head>
+<body>
+
+    <h2>YouTube Multi Tab Opener</h2>
+    <input type="text" id="videoUrl" placeholder="Enter YouTube Video URL">
+    <button onclick="openTabs()">Open in 50 Tabs</button>
+
+    <script>
+        function openTabs() {
+            let url = document.getElementById("videoUrl").value;
+            if (!url.includes("youtube.com/watch?v=") && !url.includes("youtu.be/")) {
+                alert("Invalid YouTube URL!");
+                return;
+            }
+            for (let i = 0; i < 50; i++) {
+                window.open(url, '_blank');
+            }
+        }
+    </script>
+
+</body>
+</html>
